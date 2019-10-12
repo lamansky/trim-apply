@@ -1,6 +1,6 @@
 {
   "name": "trim-apply",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Drops undefined arguments from the end of a function call.",
   "keywords": [
     "trim",
