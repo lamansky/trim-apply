@@ -11,12 +11,37 @@ Accepts an array of arguments, just like [`Function.prototype.apply()`](https://
 Requires [Node.js](https://nodejs.org/) 5.0.0 or above.
 
 ```bash
-npm install trim-apply --save
+npm i trim-apply
 ```
 
-The module exports a single function.
+## API
 
-## Usage Example
+The module exports a function (`trimApply()`) that has one other function attached to it as a method (`trimApply.new()`).
+
+### `trimApply()`
+
+#### Parameters
+
+1. `fn` (function): The function to call.
+2. `thisArg` (any): The value of `this` while the function is being called.
+3. `args` (array): The arguments for the function call. Any `undefined` arguments at the end will be dropped.
+
+#### Return Value
+
+The return value of `fn` when called with `thisArg` and `args`.
+
+### `trimApply.new()`
+
+#### Parameters
+
+1. `Cls` (class): The class whose constructor you want to call.
+2. `args` (array): The arguments for the constructor call. Any `undefined` arguments at the end will be dropped.
+
+#### Return Value
+
+A new instance of `Cls` constructed with `args`.
+
+## Examples
 
 ```javascript
 const trimApply = require('trim-apply')
@@ -49,3 +74,7 @@ function f2 () {
 ```
 
 Without `trimApply()`, the undefined `b` argument of `f1()` becomes an explicit second argument for `f2()`.
+
+## Related
+
+* [trim-call](https://github.com/lamansky/trim-call)
